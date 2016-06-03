@@ -27,3 +27,12 @@ console.log("Rendering!", data);
     return chart;
   });
 }
+
+function render_data_url(){
+	var query = document.location.search.substr(1)
+			.split(/&/g)
+			.map((s) => s.match(/^([^=]*)=(.*)/))
+			.filter((m) => m)
+			.reduce((d,a) => {d[a[1]]=a[2];return d},{});
+	if (query.url) d3.json(query.url,render);
+}
