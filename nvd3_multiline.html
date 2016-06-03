@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+<script src="d3/d3.min.js"></script>
+<script src="nvd3/build/nv.d3.min.js"></script>
+<script src="jquery.js"></script>
+<script src="nvd3_multiline.js"></script>
+<link href="nvd3/build/nv.d3.min.css" rel="stylesheet">
+<link href="nvd3_multiline.css" rel="stylesheet">
+</head>
+<body>
+
+	<div id="footer">
+	Line Graph Viewer
+        <div class="hint">enter the URL at which your data may be found, in JSON (<a href="data/cumulativeLineData.json">sample</a>)</div>
+        <div id="param">
+          <form id="parameters" onsubmit="d3.json(this.elements.dataurl.value,render);return false;">
+              <input type="text" name="dataurl" class="dataurl" placeholder="http://wherever/data.json" class="param-text">
+          </form>
+        </id>
+
+      <div id="chart"><svg/></div>
+</body>
